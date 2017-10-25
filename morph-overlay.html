@@ -1,0 +1,58 @@
+<link rel="import" href="/bower_components/morph-element/morph-element.html">
+
+
+<dom-module id="morph-overlay">
+  <template>
+    <style>
+      :host {
+        position: fixed;
+        display: none;
+        width: 100%;
+        height:100%;
+        top:0;
+        right:0;
+        left:0;
+        bottom:0;
+        z-index: 5999;
+      }
+
+      :host([platform="ios"][open]) {
+        display: block;
+        background-color: rgba(0,0,0,0);
+      }
+
+
+      :host([platform="android"][open]) {
+        display: block;
+        background-color: rgba(0,0,0,0.2);
+      }
+
+
+    </style>
+
+  </template>
+
+  <script>
+    /**
+     * `morph-overlay`
+     *
+     *
+     * @customElement
+     * @polymer
+     * @demo demo/index.html
+     */
+    class MorphOverlay extends MorphElement {
+      static get is() { return 'morph-overlay'; }
+      static get properties() {
+        return {
+          open: {
+            type: Boolean,
+            reflectToAttribute: true
+          }
+        };
+      }
+    }
+
+    window.customElements.define(MorphOverlay.is, MorphOverlay);
+  </script>
+</dom-module>
