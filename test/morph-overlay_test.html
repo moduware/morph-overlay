@@ -13,39 +13,138 @@
   </head>
   <body>
 
-    <test-fixture id="BasicTestFixture">
+    <test-fixture id="BasicAndroidFixture">
       <template>
-        <morph-overlay></morph-overlay>
+        <morph-overlay platform="android"></morph-overlay>
       </template>
     </test-fixture>
 
-    <test-fixture id="ChangedPropertyTestFixture">
+    <test-fixture id="BasicIosFixture">
       <template>
-        <morph-overlay prop1="new-prop1"></morph-overlay>
+        <morph-overlay platform="ios"></morph-overlay>
+      </template>
+    </test-fixture>
+
+    <test-fixture id="IosOpenProperty">
+      <template>
+        <morph-overlay platform="ios" open></morph-overlay>
+      </template>
+    </test-fixture>
+
+    <test-fixture id="AndroidOpenProperty">
+      <template>
+        <morph-overlay platform="android" open></morph-overlay>
       </template>
     </test-fixture>
 
     <script>
-      suite('morph-overlay', () => {
+      describe('morph-overlay', function() {
 
-        test('instantiating the element with default properties works', () => {
-          const element = fixture('BasicTestFixture');
-          assert.equal(element.prop1, 'morph-overlay');
-          const elementShadowRoot = element.shadowRoot;
-          const elementHeader = elementShadowRoot.querySelector('h2');
-          assert.equal(elementHeader.innerHTML, 'Hello morph-overlay!');
+        //Declares background-color for overlay testing suite.
+        const iosBackgroundColor = 'rgba(0, 0, 0, 0)';
+        const androidBackgroundColor = 'rgba(0, 0, 0, 0.2)';
+
+        // testing default Android overlay properties
+        context('Android Default Overlay', function() {
+          // declares variable for overlay in this scope
+          let overlay, style;
+
+
+          // Create a test fixture
+          beforeEach(function() {
+            // Assigning overlay fixture for this context.
+            // This will automatically removed on the teardown phase of this test context!
+            overlay = fixture('BasicAndroidFixture');
+
+            // getting actual CSS of overlay rendered in the shadow DOM for testing purposes
+            style = getComputedStyle(overlay);
+          });
+
+          it('instantiating the overlay on android platform with default properties works', function() {
+            // testing for default display and which platform was set in html markup
+            expect(style.display).to.be.equal('none');
+            expect(overlay.platform).to.be.equal('android');
+          });
+
         });
 
-        test('setting a property on the element works', () => {
+        // testing default Ios overlay properties
+        context('Ios Default Overlay', function() {
+          // declares variable for overlay in this scope
+          let overlay, style;
+
           // Create a test fixture
-          const element = fixture('ChangedPropertyTestFixture');
-          assert.equal(element.prop1, 'new-prop1');
-          const elementShadowRoot = element.shadowRoot;
-          const elementHeader = elementShadowRoot.querySelector('h2');
-          assert.equal(elementHeader.innerHTML, 'Hello new-prop1!');
+          beforeEach(function() {
+            // Assigning overlay fixture for this context.
+            // This will automatically removed on the teardown phase of this test context!
+            overlay = fixture('BasicIosFixture');
+
+            // getting actual CSS of overlay rendered in the shadow DOM for testing purposes
+            style = getComputedStyle(overlay);
+          });
+
+          it('instantiating the overlay on ios platform with default properties works', function() {
+            // testing for default display and which platform was set in html markup
+            expect(style.display).to.be.equal('none');
+            expect(overlay.platform).to.be.equal('ios');
+          });
+
+        });
+
+        // testing Android overlay open properties
+        context('Android Overlay Opened', function() {
+          // declares variable for overlay in this scope
+          let overlay, style;
+
+          // Create a test fixture
+          beforeEach(function() {
+            // Assigning overlay fixture for this context.
+            // This will automatically removed on the teardown phase of this test context!
+            overlay = fixture('AndroidOpenProperty');
+
+            // getting actual CSS of overlay rendered in the shadow DOM for testing purposes
+            style = getComputedStyle(overlay);
+          });
+
+          it('setting a property on the overlay in the html markup reflects corresponding property and CSS style', function() {
+            // testing for css styling and which platform was set in html markup
+            expect(overlay.hasAttribute('open')).to.be.true;
+            expect(overlay.platform).to.be.equal('android');
+            expect(style.display).to.be.equal('block');
+            expect(style.backgroundColor).to.be.equal(androidBackgroundColor);
+
+          });
+
+        });
+
+        // testing Ios overlay open properties
+        context('Ios Overlay Opened', function() {
+          // declares variable for overlay in this scope
+          let overlay, style;
+
+          // Create a test fixture
+          beforeEach(function() {
+            // Assigning overlay fixture for this context.
+            // This will automatically removed on the teardown phase of this test context!
+            overlay = fixture('IosOpenProperty');
+
+            // getting actual CSS of overlay rendered in the shadow DOM for testing purposes
+            style = getComputedStyle(overlay);
+          });
+
+          it('setting a property on the overlay in the html markup reflects corresponding property and CSS style', function() {
+            // testing for css styling and which platform was set in html markup
+            expect(overlay.hasAttribute('open')).to.be.true;
+            expect(overlay.platform).to.be.equal('ios');
+            expect(style.display).to.be.equal('block');
+            expect(style.backgroundColor).to.be.equal(iosBackgroundColor);
+
+          });
+
         });
 
       });
+
     </script>
 
   </body>
