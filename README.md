@@ -16,7 +16,7 @@ You can clone the repository to create a local copy on your computer.
 
   3. Open your Terminal and change the current working directory to the location where you want the cloned directory to be made and Type **`git clone`**, and then paste the URL you copied in Step 2.
   ```bash
-  $ git clone https://github.com/nexpaq/polymorph-components.git
+  $ git clone https://github.com/moduware/morph-overlay.git
   ```
 
   4. Then **`$ cd morph-overlay/`**
@@ -47,6 +47,20 @@ You can clone the repository to create a local copy on your computer.
   - **Note**: You will not see the overlays render properly unless you have set the device type (iOS or Android).
 
   3. **Important:** Running this local server is needed for running Polymer Test. More about this below.
+
+  ## Demo
+  - Here is a quick demo of the morph-overlay element
+
+  ```html
+
+    <template>
+        <h4>Android morph-overlay demo</h4>
+        <morph-overlay id="androidOverlay" platform="android" onclick="closeAndroidOverlay()"></morph-overlay>
+        <morph-button filled onclick="openAndroidOverlay()">Show Overlay</morph-button>
+    </template>
+
+  ```
+  
 
 ## Test
   - This `<morph-overlay> element` is ready to be tested using [**web-component-tester**][WCT] or WCT for short. Our tests is setup to use `--expanded: true` configuration for creating a more readable output of test results in the console. It will show all the test that were run and also show all the test that failed if any. Additional configuration for WCT can be found and further configured in the `wct-conf.json` file in the root of `<morph-overlay>` directory.
