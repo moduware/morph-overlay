@@ -10,21 +10,78 @@
 
 
     <link rel="import" href="/bower_components/iron-demo-helpers/demo-snippet.html">
+    <link rel="import" href="/bower_components/morph-button/morph-button.html">
+
     <link rel="import" href="../morph-overlay.html">
 
     <custom-style>
       <style is="custom-style" include="demo-pages-shared-styles">
+      #androidOverlay {
+        width: 100%;
+        height: 50%;
+        top: 58%;
+      }
+      #iosOverlay {
+        width: 100%;
+        height: 50%;
+        top: 0;
+      }
+      p {
+        font-size: 10px;
+        display: none;
+      }
       </style>
     </custom-style>
   </head>
   <body>
+
     <div class="vertical-section-container centered">
       <h3>Morph-overlay demo</h3>
+
       <demo-snippet>
         <template>
-          <morph-overlay open></morph-overlay>
+            <h4>iOS morph-overlay demo</h4>
+            <p id="note">
+              *Since iOS has rgba(0,0,0,0) background-color, we don't see any difference in styling.
+            </p>
+            <morph-overlay id="iosOverlay" platform="ios" onclick="closeIosOverlay()"></morph-overlay>
+            <morph-button filled onclick="openOverlay()">Show Overlay</morph-button>
         </template>
       </demo-snippet>
+
+      <demo-snippet>
+        <template>
+            <h4>Android morph-overlay demo</h4>
+            <morph-overlay id="androidOverlay" platform="android" onclick="closeAndroidOverlay()"></morph-overlay>
+            <morph-button filled onclick="openAndroidOverlay()">Show Overlay</morph-button>
+        </template>
+      </demo-snippet>
+
     </div>
+    <script>
+      function openOverlay() {
+        document.getElementById('iosOverlay').setAttribute("open", true);
+        document.getElementById('note').style.display="block";
+      }
+      function openAndroidOverlay() {
+        document.getElementById('androidOverlay').setAttribute("open", true);
+      }
+      function closeAndroidOverlay () {
+        var androidOverlay = document.getElementById('androidOverlay');
+        if (androidOverlay.hasAttribute("open")) {
+          androidOverlay.removeAttribute("open");
+        }
+      }
+      function closeIosOverlay () {
+        var iosOverlay = document.getElementById('iosOverlay');
+        if (iosOverlay.hasAttribute("open")) {
+          iosOverlay.removeAttribute("open");
+          document.getElementById('note').style.display="none";
+        }
+      }
+
+
+    </script>
   </body>
+
 </html>
