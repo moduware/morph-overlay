@@ -10,7 +10,7 @@ First, make sure you have the [Polymer CLI](https://www.npmjs.com/package/polyme
 ## Getting Started:
 You can clone the repository to create a local copy on your computer.
 
-  1. Navigate to the main page of the repository in Github - [Main Page in Github][Main Page]
+  1. Navigate to the main page of the repository in Github - [Main Page in Github](https://github.com/moduware/morph-overlay.git)
 
   2. Click **Clone or download** and copy the clone URL for the repository
 
@@ -142,9 +142,9 @@ You can clone the repository to create a local copy on your computer.
 ```
 
   - For brief overview of Polymer Testing please go to this page [Polymer Test][Polymer Test]
-[Demo Image]: https://user-images.githubusercontent.com/15607784/32081318-79a98e8c-ba69-11e7-8813-c478acffb448.png
+  - To learn more about the other Polymorph Components, please check out this [repository][Main Page].
 
-[Main Page]: https://github.com/nexpaq/polymorph-components
+[Main Page]: https://github.com/moduware/polymorph-components
 
 [WCT]: https://github.com/Polymer/web-component-tester  
 
