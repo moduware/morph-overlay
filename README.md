@@ -60,7 +60,7 @@ You can clone the repository to create a local copy on your computer.
     </template>
 
   ```
-  [Demo Image]
+  ![alt text](https://user-images.githubusercontent.com/15607784/32081318-79a98e8c-ba69-11e7-8813-c478acffb448.png)
 
 ## Test
   - This `<morph-overlay> element` is ready to be tested using [**web-component-tester**][WCT] or WCT for short. Our tests is setup to use `--expanded: true` configuration for creating a more readable output of test results in the console. It will show all the test that were run and also show all the test that failed if any. Additional configuration for WCT can be found and further configured in the `wct-conf.json` file in the root of `<morph-overlay>` directory.
