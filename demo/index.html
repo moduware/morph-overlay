@@ -8,10 +8,8 @@
 
     <script src="/bower_components/webcomponentsjs/webcomponents-lite.js"></script>
 
-
     <link rel="import" href="/bower_components/iron-demo-helpers/demo-snippet.html">
     <link rel="import" href="/bower_components/morph-button/morph-button.html">
-
     <link rel="import" href="../morph-overlay.html">
 
     <custom-style>
@@ -45,7 +43,7 @@
               *Since iOS has rgba(0,0,0,0) background-color, we don't see any difference in styling.
             </p>
             <morph-overlay id="iosOverlay" platform="ios" onclick="closeIosOverlay()"></morph-overlay>
-            <morph-button filled onclick="openOverlay()">Show Overlay</morph-button>
+            <morph-button filled onclick="openIosOverlay()">Show Overlay</morph-button>
         </template>
       </demo-snippet>
 
@@ -59,19 +57,23 @@
 
     </div>
     <script>
-      function openOverlay() {
+      //Opens IOS overlay
+      function openIosOverlay() {
         document.getElementById('iosOverlay').setAttribute("open", true);
         document.getElementById('note').style.display="block";
       }
+      //Opens Android overlay
       function openAndroidOverlay() {
         document.getElementById('androidOverlay').setAttribute("open", true);
       }
+      //Closes Android overlay
       function closeAndroidOverlay () {
         var androidOverlay = document.getElementById('androidOverlay');
         if (androidOverlay.hasAttribute("open")) {
           androidOverlay.removeAttribute("open");
         }
       }
+      //Closes IOS overlay
       function closeIosOverlay () {
         var iosOverlay = document.getElementById('iosOverlay');
         if (iosOverlay.hasAttribute("open")) {
@@ -79,8 +81,6 @@
           document.getElementById('note').style.display="none";
         }
       }
-
-
     </script>
   </body>
 
