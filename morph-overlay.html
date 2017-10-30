@@ -1,9 +1,16 @@
 <link rel="import" href="/bower_components/morph-element/morph-element.html">
 
+<!--
+`morph-overlay`
+Overlay that morphs for current mobile OS
 
+@demo demo/index.html
+-->
 <dom-module id="morph-overlay">
   <template>
     <style>
+
+      /* Shared styles between platforms */
       :host {
         position: fixed;
         display: none;
@@ -16,31 +23,24 @@
         z-index: 5999;
       }
 
+      /* iOS only styles */
       :host([platform="ios"][open]) {
         display: block;
         background-color: rgba(0,0,0,0);
       }
 
-
+      /* Android only styles */
       :host([platform="android"][open]) {
         display: block;
         background-color: rgba(0,0,0,0.2);
       }
-
 
     </style>
 
   </template>
 
   <script>
-    /**
-     * `morph-overlay`
-     *
-     *
-     * @customElement
-     * @polymer
-     * @demo demo/index.html
-     */
+    /** @polymerElement */
     class MorphOverlay extends MorphElement {
       static get is() { return 'morph-overlay'; }
       static get properties() {
