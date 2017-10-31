@@ -17,7 +17,7 @@
     <link rel="import" href="../morph-overlay.html">
 
     <custom-style>
-      <style is="custom-style" include="demo-pages-shared-styles">
+      <style is="custom-style">
       #androidOverlay {
         width: 100%;
         height: 50%;
@@ -47,7 +47,7 @@
               *Since iOS has rgba(0,0,0,0) background-color, we don't see any difference in styling.
             </p>
             <morph-overlay id="iosOverlay" platform="ios" onclick="closeIosOverlay()"></morph-overlay>
-            <morph-button filled onclick="openIosOverlay()">Show Overlay</morph-button>
+            <morph-button platform="ios" filled onclick="openIosOverlay()">Show Overlay</morph-button>
         </template>
       </demo-snippet>
 
@@ -55,7 +55,7 @@
         <template>
             <h4>Android morph-overlay demo</h4>
             <morph-overlay id="androidOverlay" platform="android" onclick="closeAndroidOverlay()"></morph-overlay>
-            <morph-button filled onclick="openAndroidOverlay()">Show Overlay</morph-button>
+            <morph-button platform="android" filled onclick="openAndroidOverlay()">Show Overlay</morph-button>
         </template>
       </demo-snippet>
 
