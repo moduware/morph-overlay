@@ -4,6 +4,9 @@
 <dom-module id="morph-overlay">
   <template>
     <style>
+      /**
+      *Common styling for both android and ios
+      * */
       :host {
         position: fixed;
         display: none;
@@ -15,18 +18,21 @@
         bottom:0;
         z-index: 5999;
       }
-
+      /**
+      *IOS styling for overlay open status
+      * */
       :host([platform="ios"][open]) {
         display: block;
         background-color: rgba(0,0,0,0);
       }
 
-
+      /**
+      *Android styling for overlay open status
+      * */
       :host([platform="android"][open]) {
         display: block;
         background-color: rgba(0,0,0,0.2);
       }
-
 
     </style>
 
@@ -35,11 +41,11 @@
   <script>
     /**
      * `morph-overlay`
-     *
+     *  Overlay that morphs for current mobile OS
      *
      * @customElement
      * @polymer
-     * @demo demo/index.html
+     * @demo morph-overlay/demo/index.html
      */
     class MorphOverlay extends MorphElement {
       static get is() { return 'morph-overlay'; }
