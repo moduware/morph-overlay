@@ -17,6 +17,9 @@
         left:0;
         bottom:0;
         z-index: 5999;
+
+        --ios-background-color: rgba(0,0,0,0);
+        --android-background-color: rgba(0,0,0,0.2);
       }
 
       /**
@@ -24,7 +27,7 @@
       * */
       :host([platform="ios"][open]) {
         display: block;
-        background-color: rgba(0,0,0,0);
+        background-color: var(--ios-background-color);
       }
 
       /**
@@ -32,7 +35,7 @@
       * */
       :host([platform="android"][open]) {
         display: block;
-        background-color: rgba(0,0,0,0.2);
+        background-color: var(--android-background-color);
       }
 
     </style>
