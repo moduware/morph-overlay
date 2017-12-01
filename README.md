@@ -17,7 +17,10 @@ For the information about how to clone the desired repository, running the local
   </template>
 
 ```
-![alt text](https://user-images.githubusercontent.com/15607784/32081318-79a98e8c-ba69-11e7-8813-c478acffb448.png)
+
+<p align="center" >
+  <img src="./demo-images/morph-overlay-demo.png" alt="morph sidebar demo image" />
+</p>
 
 ## Attributes
 
