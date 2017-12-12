@@ -1,4 +1,6 @@
 <link rel="import" href="/bower_components/morph-element/morph-element.html">
+<link rel="import" href="/bower_components/polymer/polymer-element.html">
+
 
 <dom-module id="morph-overlay">
   <template>
@@ -50,7 +52,7 @@
      * @polymer
      * @demo morph-overlay/demo/index.html
      */
-    class MorphOverlay extends MorphElement {
+    class MorphOverlay extends MorphElement(Polymer.Element) {
       static get is() { return 'morph-overlay'; }
       static get properties() {
         return {

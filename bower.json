@@ -3,8 +3,8 @@
   "main": "morph-overlay.html",
   "dependencies": {
     "polymer": "Polymer/polymer#^2.0.0",
-    "morph-element": "https://github.com/nexpaq/morph-element.git#master",
-    "morph-button": "https://github.com/nexpaq/morph-button.git#master",
+    "morph-element": "https://github.com/nexpaq/morph-element.git#develop",
+    "morph-button": "https://github.com/nexpaq/morph-button.git#develop",
     "morph-shared-colors": "https://github.com/moduware/morph-shared-colors.git#master",
     "morph-shared-styles": "https://github.com/moduware/morph-shared-styles.git#master"
   },
