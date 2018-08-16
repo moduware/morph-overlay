@@ -1,6 +1,9 @@
 {
   "name": "morph-overlay",
   "main": "morph-overlay.html",
+  "demos": {
+    "Demo": "demo/index.html"
+  },
   "dependencies": {
     "polymer": "Polymer/polymer#^2.0.0",
     "morph-element": "https://github.com/nexpaq/morph-element.git#master",

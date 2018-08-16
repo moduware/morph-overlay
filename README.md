@@ -11,9 +11,7 @@ For the information about how to clone the desired repository, running the local
 ## Demo
 
 <!---
-
 ```
-
 <custom-element-demo>
   <template>
     <script src="../webcomponentsjs/webcomponents-lite.js"></script>
@@ -36,17 +34,12 @@ For the information about how to clone the desired repository, running the local
     <next-code-block></next-code-block>
   </template>
 </custom-element-demo>
-
 ```
-
 -->
-
 ```html
-
-  <h4>Android morph-overlay demo</h4>
-  <morph-overlay id="androidOverlay" platform="android" onclick="closeAndroidOverlay()"></morph-overlay>
-  <morph-button platform="android" filled onclick="openAndroidOverlay()">Show Overlay</morph-button>
-
+<h4>Android morph-overlay demo</h4>
+<morph-overlay id="androidOverlay" platform="android" onclick="closeAndroidOverlay()"></morph-overlay>
+<morph-button platform="android" filled onclick="openAndroidOverlay()">Show Overlay</morph-button>
 ```
 
 - Here is a quick demo of the morph-overlay element
