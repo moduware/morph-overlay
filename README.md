@@ -37,7 +37,7 @@ For the information about how to clone the desired repository, running the local
 ```
 -->
 ```html
-<h4>Android morph-overlay demo</h4>
+<h4>Android morph-overlay interactive demo. Click the button to see overlay.</h4>
 <morph-overlay id="androidOverlay" platform="android" onclick="closeAndroidOverlay()"></morph-overlay>
 <morph-button platform="android" filled onclick="openAndroidOverlay()">Show Overlay</morph-button>
 ```
