@@ -1,11 +1,15 @@
-## &lt;morph-overlay&gt;
+# morph-overlay
+
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) [![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/PolymerElements/paper-progress)
+
 Overlay that morphs for current mobile OS
 
-## Getting Started:
-For the information about how to clone the desired repository, running the local server and testing, please refer to this [link](https://github.com/moduware/polymorph-components/blob/master/INFO.md).
+## Getting Started
 
+For the information about how to clone the desired repository, running the local server and testing, please refer to Polymorph elements getting started docs at the end of this repository.
 
 ## Demo
+
 - Here is a quick demo of the morph-overlay element
 
 ```html
@@ -32,6 +36,7 @@ For the information about how to clone the desired repository, running the local
 
 
 ## Styling
+
 -For Android platform;
 
 Custom property                  | Description                            | Default
@@ -43,3 +48,9 @@ Custom property                  | Description                            | Defa
 Custom property                  | Description                            | Default
 ---------------------------------|----------------------------------------|--------------------
 `--ios-background-color`         | Background color of overlay            | rgba(0,0,0,0)
+
+## Further help
+
+For more information on how to install and run test please go here - [Polymorph elements getting started]
+
+[Polymorph elements getting started]: https://github.com/moduware/polymorph-components/blob/master/INFO.md
