@@ -6,21 +6,21 @@
 
     <title>morph-overlay demo</title>
 
-    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+    <script src="../node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js"></script>
 
-    <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
-    <link rel="import" href="../../morph-shared-colors/morph-shared-colors.html">
-    <link rel="import" href="../../morph-shared-styles/morph-shared-styles.html">
-    <link rel="import" href="../../morph-button/morph-button.html">
+    <script type="module" src="../node_modules/@polymer/iron-demo-helpers/demo-snippet.js"></script>
+    <script type="module" src="../node_modules/@polymer/morph-shared-colors/morph-shared-colors.js"></script>
+    <script type="module" src="../node_modules/@polymer/morph-shared-styles/morph-shared-styles.js"></script>
+    <!-- <script type="module" src="../node_modules/morph-button/morph-button.js"></script> -->
     
-    <link rel="import" href="../morph-overlay.html">
+    <script type="module" src="../morph-overlay.js"></script>
 
     <custom-style>
       <style is="custom-style">
       #androidOverlay {
         width: 100%;
         height: 50%;
-        top: 58%;
+        top: 52%;
       }
       #iosOverlay {
         width: 100%;
@@ -46,7 +46,7 @@
               *Since iOS has rgba(0,0,0,0) background-color, we don't see any difference in styling.
             </p>
             <morph-overlay id="iosOverlay" platform="ios" onclick="closeIosOverlay()"></morph-overlay>
-            <morph-button platform="ios" filled onclick="openIosOverlay()">Show Overlay</morph-button>
+            <morph type="button" onclick="openIosOverlay()">Show me Overlay</button>
         </template>
       </demo-snippet>
 
@@ -54,7 +54,7 @@
         <template>
             <h4>Android morph-overlay demo</h4>
             <morph-overlay id="androidOverlay" platform="android" onclick="closeAndroidOverlay()"></morph-overlay>
-            <morph-button platform="android" filled onclick="openAndroidOverlay()">Show Overlay</morph-button>
+            <button type="button" onclick="openAndroidOverlay()">Show Overlay</button>
         </template>
       </demo-snippet>
 
@@ -84,6 +84,7 @@
           document.getElementById('note').style.display="none";
         }
       }
+
     </script>
   </body>
 

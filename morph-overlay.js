@@ -1,9 +1,17 @@
-<link rel="import" href="../morph-element/morph-element.html">
-<link rel="import" href="../polymer/polymer-element.html">
-
-
-<dom-module id="morph-overlay">
-  <template>
+import '@polymer/morph-element/morph-element.js';
+import { PolymerElement } from '@polymer/polymer/polymer-element.js';
+import { html } from '@polymer/polymer/lib/utils/html-tag.js';
+/**
+ * `morph-overlay`
+ *  Overlay that morphs for current mobile OS
+ *
+ * @customElement
+ * @polymer
+ * @demo morph-overlay/demo/index.html
+ */
+class MorphOverlay extends MorphElement(PolymerElement) {
+  static get template() {
+    return html`
     <style>
 
       /**
@@ -41,29 +49,18 @@
       }
 
     </style>
-  </template>
+`;
+  }
 
-  <script>
-    /**
-     * `morph-overlay`
-     *  Overlay that morphs for current mobile OS
-     *
-     * @customElement
-     * @polymer
-     * @demo morph-overlay/demo/index.html
-     */
-    class MorphOverlay extends MorphElement(Polymer.Element) {
-      static get is() { return 'morph-overlay'; }
-      static get properties() {
-        return {
-          open: {
-            type: Boolean,
-            reflectToAttribute: true
-          }
-        };
+  static get is() { return 'morph-overlay'; }
+  static get properties() {
+    return {
+      open: {
+        type: Boolean,
+        reflectToAttribute: true
       }
-    }
+    };
+  }
+}
 
-    window.customElements.define(MorphOverlay.is, MorphOverlay);
-  </script>
-</dom-module>
+window.customElements.define(MorphOverlay.is, MorphOverlay);
