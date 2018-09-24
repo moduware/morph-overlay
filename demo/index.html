@@ -11,26 +11,44 @@
     <script type="module" src="../node_modules/@polymer/iron-demo-helpers/demo-snippet.js"></script>
     <script type="module" src="../node_modules/@polymer/morph-shared-colors/morph-shared-colors.js"></script>
     <script type="module" src="../node_modules/@polymer/morph-shared-styles/morph-shared-styles.js"></script>
-    <!-- <script type="module" src="../node_modules/morph-button/morph-button.js"></script> -->
     
     <script type="module" src="../morph-overlay.js"></script>
 
     <custom-style>
       <style is="custom-style">
-      #androidOverlay {
-        width: 100%;
-        height: 50%;
-        top: 52%;
-      }
-      #iosOverlay {
-        width: 100%;
-        height: 50%;
-        top: 0;
-      }
-      p {
-        font-size: 10px;
-        display: none;
-      }
+        .demo {
+          padding: 0px;
+        }
+        div.container {
+          position: relative;
+          height: 100px;
+          padding: 5px;
+        }
+        #androidOverlay {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+        }
+        #iosOverlay {
+          width: 100%;
+          height: 50%;
+          top: 0;
+        }
+        p {
+          font-size: 10px;
+          display: none;
+        }
+        button.primary {
+          border-radius:2em;
+          margin:0 0.3em 0.3em 0;
+          padding:0.3em 1.2em;
+          color:#FFFFFF;
+          background-color:#4eb5f1;
+          text-decoration:none;
+        }
+        button.primary:hover {
+          background-color:#4095c6;
+        }
       </style>
     </custom-style>
   </head>
@@ -46,15 +64,17 @@
               *Since iOS has rgba(0,0,0,0) background-color, we don't see any difference in styling.
             </p>
             <morph-overlay id="iosOverlay" platform="ios" onclick="closeIosOverlay()"></morph-overlay>
-            <morph type="button" onclick="openIosOverlay()">Show me Overlay</button>
+            <button type="button" onclick="openIosOverlay()">Show me Overlay</button>
         </template>
       </demo-snippet>
 
       <demo-snippet>
         <template>
+          <div class="container">
             <h4>Android morph-overlay demo</h4>
             <morph-overlay id="androidOverlay" platform="android" onclick="closeAndroidOverlay()"></morph-overlay>
-            <button type="button" onclick="openAndroidOverlay()">Show Overlay</button>
+            <button class="primary" type="button" onclick="openAndroidOverlay()">Show Overlay</button>
+          </div>
         </template>
       </demo-snippet>
 
