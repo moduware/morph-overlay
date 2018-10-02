@@ -1,4 +1,4 @@
-import { MorphElement } from '@polymer/morph-element/morph-element.js';
+import { MorphElement } from 'morph-element/morph-element.js';
 import { PolymerElement } from '@polymer/polymer/polymer-element.js';
 import { html } from '@polymer/polymer/lib/utils/html-tag.js';
 /**
@@ -6,7 +6,7 @@ import { html } from '@polymer/polymer/lib/utils/html-tag.js';
  *  Overlay that morphs for current mobile OS
  *
  * @customElement
- * @polymer
+ * @polymerElement
  * @demo morph-overlay/demo/index.html
  */
 class MorphOverlay extends MorphElement(PolymerElement) {

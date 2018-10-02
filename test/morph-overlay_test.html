@@ -38,114 +38,114 @@
     </test-fixture>
 
     <script type="module">
-import '../morph-overlay.js';
-describe('morph-overlay', function() {
+      describe('morph-overlay', function() {
 
-  //Declares background-color for overlay testing suite.
-  const iosBackgroundColor = 'rgba(0, 0, 0, 0)';
-  const androidBackgroundColor = 'rgba(0, 0, 0, 0.2)';
+        //Declares background-color for overlay testing suite.
+        const iosBackgroundColor = 'rgba(0, 0, 0, 0)';
+        const androidBackgroundColor = 'rgba(0, 0, 0, 0.2)';
 
-  // testing default Android overlay properties
-  context('Android Default Overlay', function() {
-    // declares variable for overlay in this scope
-    let overlay, style;
+        // testing default Android overlay properties
+        context('Android Default Overlay', function() {
+          // declares variable for overlay in this scope
+          let overlay, style;
 
 
-    // Create a test fixture
-    beforeEach(function() {
-      // Assigning overlay fixture for this context.
-      // This will automatically removed on the teardown phase of this test context!
-      overlay = fixture('BasicAndroidFixture');
+          // Create a test fixture
+          beforeEach(function() {
+            // Assigning overlay fixture for this context.
+            // This will automatically removed on the teardown phase of this test context!
+            overlay = fixture('BasicAndroidFixture');
 
-      // getting actual CSS of overlay rendered in the shadow DOM for testing purposes
-      style = getComputedStyle(overlay);
-    });
+            // getting actual CSS of overlay rendered in the shadow DOM for testing purposes
+            style = getComputedStyle(overlay);
+          });
 
-    it('instantiating the overlay on android platform with default properties works', function() {
-      // testing for default display and which platform was set in html markup
-      expect(style.display).to.be.equal('none');
-      expect(overlay.platform).to.be.equal('android');
-    });
+          it('instantiating the overlay on android platform with default properties works', function() {
+            // testing for default display and which platform was set in html markup
+            expect(style.display).to.be.equal('none');
+            expect(overlay.platform).to.be.equal('android');
+          });
 
-  });
+        });
 
-  // testing default Ios overlay properties
-  context('Ios Default Overlay', function() {
-    // declares variable for overlay in this scope
-    let overlay, style;
+        // testing default Ios overlay properties
+        context('Ios Default Overlay', function() {
+          // declares variable for overlay in this scope
+          let overlay, style;
 
-    // Create a test fixture
-    beforeEach(function() {
-      // Assigning overlay fixture for this context.
-      // This will automatically removed on the teardown phase of this test context!
-      overlay = fixture('BasicIosFixture');
+          // Create a test fixture
+          beforeEach(function() {
+            // Assigning overlay fixture for this context.
+            // This will automatically removed on the teardown phase of this test context!
+            overlay = fixture('BasicIosFixture');
 
-      // getting actual CSS of overlay rendered in the shadow DOM for testing purposes
-      style = getComputedStyle(overlay);
-    });
+            // getting actual CSS of overlay rendered in the shadow DOM for testing purposes
+            style = getComputedStyle(overlay);
+          });
 
-    it('instantiating the overlay on ios platform with default properties works', function() {
-      // testing for default display and which platform was set in html markup
-      expect(style.display).to.be.equal('none');
-      expect(overlay.platform).to.be.equal('ios');
-    });
+          it('instantiating the overlay on ios platform with default properties works', function() {
+            // testing for default display and which platform was set in html markup
+            expect(style.display).to.be.equal('none');
+            expect(overlay.platform).to.be.equal('ios');
+          });
 
-  });
+        });
 
-  // testing Android overlay open properties
-  context('Android Overlay Opened', function() {
-    // declares variable for overlay in this scope
-    let overlay, style;
+        // testing Android overlay open properties
+        context('Android Overlay Opened', function() {
+          // declares variable for overlay in this scope
+          let overlay, style;
 
-    // Create a test fixture
-    beforeEach(function() {
-      // Assigning overlay fixture for this context.
-      // This will automatically removed on the teardown phase of this test context!
-      overlay = fixture('AndroidOpenProperty');
+          // Create a test fixture
+          beforeEach(function() {
+            // Assigning overlay fixture for this context.
+            // This will automatically removed on the teardown phase of this test context!
+            overlay = fixture('AndroidOpenProperty');
 
-      // getting actual CSS of overlay rendered in the shadow DOM for testing purposes
-      style = getComputedStyle(overlay);
-    });
+            // getting actual CSS of overlay rendered in the shadow DOM for testing purposes
+            style = getComputedStyle(overlay);
+          });
 
-    it('setting a property on the overlay in the html markup reflects corresponding property and CSS style', function() {
-      // testing for css styling and which platform was set in html markup
-      expect(overlay.hasAttribute('open')).to.be.true;
-      expect(overlay.platform).to.be.equal('android');
-      expect(style.display).to.be.equal('block');
-      expect(style.backgroundColor).to.be.equal(androidBackgroundColor);
+          it('setting a property on the overlay in the html markup reflects corresponding property and CSS style', function() {
+            // testing for css styling and which platform was set in html markup
+            expect(overlay.hasAttribute('open')).to.be.true;
+            expect(overlay.platform).to.be.equal('android');
+            expect(style.display).to.be.equal('block');
+            expect(style.backgroundColor).to.be.equal(androidBackgroundColor);
 
-    });
+          });
 
-  });
+        });
 
-  // testing Ios overlay open properties
-  context('Ios Overlay Opened', function() {
-    // declares variable for overlay in this scope
-    let overlay, style;
+        // testing Ios overlay open properties
+        context('Ios Overlay Opened', function() {
+          // declares variable for overlay in this scope
+          let overlay, style;
 
-    // Create a test fixture
-    beforeEach(function() {
-      // Assigning overlay fixture for this context.
-      // This will automatically removed on the teardown phase of this test context!
-      overlay = fixture('IosOpenProperty');
+          // Create a test fixture
+          beforeEach(function() {
+            // Assigning overlay fixture for this context.
+            // This will automatically removed on the teardown phase of this test context!
+            overlay = fixture('IosOpenProperty');
 
-      // getting actual CSS of overlay rendered in the shadow DOM for testing purposes
-      style = getComputedStyle(overlay);
-    });
+            // getting actual CSS of overlay rendered in the shadow DOM for testing purposes
+            style = getComputedStyle(overlay);
+          });
 
-    it('setting a property on the overlay in the html markup reflects corresponding property and CSS style', function() {
-      // testing for css styling and which platform was set in html markup
-      expect(overlay.hasAttribute('open')).to.be.true;
-      expect(overlay.platform).to.be.equal('ios');
-      expect(style.display).to.be.equal('block');
-      expect(style.backgroundColor).to.be.equal(iosBackgroundColor);
+          it('setting a property on the overlay in the html markup reflects corresponding property and CSS style', function() {
+            // testing for css styling and which platform was set in html markup
+            expect(overlay.hasAttribute('open')).to.be.true;
+            expect(overlay.platform).to.be.equal('ios');
+            expect(style.display).to.be.equal('block');
+            expect(style.backgroundColor).to.be.equal(iosBackgroundColor);
 
-    });
+          });
 
-  });
+        });
 
-});
-</script>
+      });
+
+    </script>
 
   </body>
 </html>

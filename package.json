@@ -1,6 +1,9 @@
 {
   "name": "@polymer/morph-overlay",
   "version": "1.0.0",
+  "scripts": {
+    "start": "polymer serve --npm --module-resolution=node"
+  },
   "resolutions": {
     "inherits": "2.0.3",
     "samsam": "1.1.3",
@@ -11,13 +14,13 @@
   "license": "Apache-2.0",
   "dependencies": {
     "morph-element": "github:moduware/morph-element#polymer3",
-    "morph-shared-colors": "github:moduware/morph-shared-colors#polymer3",
-    "morph-shared-styles": "github:moduware/morph-shared-styles#polymer3",
     "@polymer/polymer": "^3.0.0"
   },
   "devDependencies": {
     "@polymer/iron-demo-helpers": "^3.0.0-pre.18",
     "@webcomponents/webcomponentsjs": "^2.0.0",
+    "morph-shared-colors": "github:moduware/morph-shared-colors#polymer3",
+    "morph-shared-styles": "github:moduware/morph-shared-styles#polymer3",
     "wct-browser-legacy": "^1.0.1"
   }
 }
