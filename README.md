@@ -55,7 +55,7 @@ For the information about how to clone the desired repository, running the local
 ```
 
   <p align="center" >
-    <img src="./demo-images/android-demo.gif" alt="morph sidebar demo image" />
+    <img src="https://github.com/moduware/morph-overlay/blob/master/demo-images/android-demo.gif?raw=true" alt="morph sidebar demo image" />
   </p>
 
 ## Attributes

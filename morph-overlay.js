@@ -1,6 +1,5 @@
-import { MorphElement } from 'morph-element/morph-element.js';
-import { PolymerElement } from '@polymer/polymer/polymer-element.js';
-import { html } from '@polymer/polymer/lib/utils/html-tag.js';
+import { MorphElement } from '@moduware/morph-element/morph-element.js';
+import { PolymerElement, html } from '@polymer/polymer/polymer-element.js';
 /**
  * `morph-overlay`
  *  Overlay that morphs for current mobile OS
@@ -9,7 +8,7 @@ import { html } from '@polymer/polymer/lib/utils/html-tag.js';
  * @polymerElement
  * @demo morph-overlay/demo/index.html
  */
-class MorphOverlay extends MorphElement(PolymerElement) {
+export class MorphOverlay extends MorphElement(PolymerElement) {
   static get template() {
     return html`
     <style>
