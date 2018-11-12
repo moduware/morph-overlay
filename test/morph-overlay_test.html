@@ -135,7 +135,7 @@
             style = getComputedStyle(overlay);
           });
 
-          it.only('setting a property on the overlay in the html markup reflects corresponding property and CSS style', async function() {
+          it('setting a property on the overlay in the html markup reflects corresponding property and CSS style', async function() {
             await overlay.updateComplete;
             // testing for css styling and which platform was set in html markup
             expect(overlay.hasAttribute('open')).to.be.true;
