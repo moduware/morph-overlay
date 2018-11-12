@@ -60,7 +60,8 @@
             style = getComputedStyle(overlay);
           });
 
-          it('instantiating the overlay on android platform with default properties works', function() {
+          it('instantiating the overlay on android platform with default properties works', async function() {
+            await overlay.updateComplete;
             // testing for default display and which platform was set in html markup
             expect(style.display).to.be.equal('none');
             expect(overlay.platform).to.be.equal('android');
@@ -83,7 +84,8 @@
             style = getComputedStyle(overlay);
           });
 
-          it('instantiating the overlay on ios platform with default properties works', function() {
+          it('instantiating the overlay on ios platform with default properties works', async function() {
+            await overlay.updateComplete;
             // testing for default display and which platform was set in html markup
             expect(style.display).to.be.equal('none');
             expect(overlay.platform).to.be.equal('ios');
@@ -106,7 +108,8 @@
             style = getComputedStyle(overlay);
           });
 
-          it('setting a property on the overlay in the html markup reflects corresponding property and CSS style', function() {
+          it('setting a property on the overlay in the html markup reflects corresponding property and CSS style', async function() {
+            await overlay.updateComplete;
             // testing for css styling and which platform was set in html markup
             expect(overlay.hasAttribute('open')).to.be.true;
             expect(overlay.platform).to.be.equal('android');
@@ -132,7 +135,8 @@
             style = getComputedStyle(overlay);
           });
 
-          it('setting a property on the overlay in the html markup reflects corresponding property and CSS style', function() {
+          it.only('setting a property on the overlay in the html markup reflects corresponding property and CSS style', async function() {
+            await overlay.updateComplete;
             // testing for css styling and which platform was set in html markup
             expect(overlay.hasAttribute('open')).to.be.true;
             expect(overlay.platform).to.be.equal('ios');

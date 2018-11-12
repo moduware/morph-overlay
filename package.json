@@ -7,13 +7,17 @@
     "url": "https://github.com/moduware/morph-overlay"
   },
   "scripts": {
-    "start": "polymer serve --npm --module-resolution=node"
+    "start": "polymer serve --npm --module-resolution=node",
+    "test": "wct"
   },
   "main": "morph-overlay.js",
+  "contributors": [
+    "Clint Pijuan <clintp1@gmail.com>",
+    "Alex Chernov <alexusblack@gmail.com>"
+  ],
   "license": "Apache-2.0",
   "dependencies": {
-    "@moduware/morph-element": "^1.0.0",
-    "@polymer/polymer": "^3.0.0"
+    "@polymer/lit-element": "^0.6.2"
   },
   "devDependencies": {
     "@polymer/iron-demo-helpers": "^3.0.0-pre.18",

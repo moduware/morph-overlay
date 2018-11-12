@@ -1,15 +1,20 @@
-import { MorphElement } from '@moduware/morph-element/morph-element.js';
-import { PolymerElement, html } from '@polymer/polymer/polymer-element.js';
+// import { MorphElement } from '@moduware/morph-element/morph-element.js';
+// import { PolymerElement, html } from '@polymer/polymer/polymer-element.js';
+
+import { LitElement, html } from '@polymer/lit-element';
+import { getPlatform } from '/src/morph-element.js';
+
+
 /**
  * `morph-overlay`
  *  Overlay that morphs for current mobile OS
  *
  * @customElement
- * @polymerElement
+ * @extends HTMLElement
  * @demo morph-overlay/demo/index.html
  */
-export class MorphOverlay extends MorphElement(PolymerElement) {
-  static get template() {
+export class MorphOverlay extends LitElement {
+  render() {
     return html`
     <style>
 
@@ -54,11 +59,18 @@ export class MorphOverlay extends MorphElement(PolymerElement) {
   static get is() { return 'morph-overlay'; }
   static get properties() {
     return {
+      platform: { String },
       open: {
         type: Boolean,
-        reflectToAttribute: true
+        reflect: true
       }
     };
+  }
+
+  constructor() {
+    super();
+
+    this.platform = getPlatform();
   }
 }
 
