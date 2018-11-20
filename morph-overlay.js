@@ -67,10 +67,15 @@ export class MorphOverlay extends LitElement {
     };
   }
 
-  constructor() {
-    super();
-
-    this.platform = getPlatform();
+  /**
+   * LitElement lifecycle called once before the first updated().
+   */
+  firstUpdated() {
+    super.firstUpdated();
+    // check first if platform attribute is assinged before auto detecting platform using getPlatform()
+    if(!this.hasAttribute('platform')) {
+      this.platform = getPlatform();
+    }
   }
 }
 
