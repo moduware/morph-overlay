@@ -4,6 +4,8 @@
 
 Overlay that morphs for current mobile OS
 
+The morph components is currently moving to use lit-element as base class. Most of the components in the master branch are already doing this and the old version using the polymer base class are found in the `polymer-3.0` branch.
+
 ## Getting Started
 
 For the information about how to clone the desired repository, running the local server and testing, please refer to Polymorph elements getting started docs at the end of this repository.

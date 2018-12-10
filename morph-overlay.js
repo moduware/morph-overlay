@@ -1,8 +1,5 @@
-// import { MorphElement } from '@moduware/morph-element/morph-element.js';
-// import { PolymerElement, html } from '@polymer/polymer/polymer-element.js';
-
 import { LitElement, html } from '@polymer/lit-element';
-import { getPlatform } from '/src/morph-element.js';
+import { getPlatform } from '@moduware/lit-utils';
 
 
 /**
@@ -53,13 +50,16 @@ export class MorphOverlay extends LitElement {
       }
 
     </style>
-`;
+    `;
   }
 
   static get is() { return 'morph-overlay'; }
   static get properties() {
     return {
-      platform: { String },
+      platform: { 
+        type: String,
+        reflect: true
+      },
       open: {
         type: Boolean,
         reflect: true
