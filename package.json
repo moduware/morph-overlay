@@ -1,7 +1,7 @@
 {
   "description": "Overlay that morphs for current mobile OS",
   "name": "@polymer/morph-overlay",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/moduware/morph-overlay"
